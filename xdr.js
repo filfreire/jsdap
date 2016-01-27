@@ -20,11 +20,15 @@ function dapUnpacker(xdrdata, dapvar) {
         if (type == 'structure' || type == 'dataset') {
             var out = [], tmp;
             dapvar = this.dapvar;
+            console.log(dapvar);
             for (child in dapvar) {
-                if (dapvar[child].type) {
-                    this.dapvar = dapvar[child];
-                    tmp = this.getValue();
-                    out.push(tmp);
+                if(dapvar[child] != null){
+                    console.log(dapvar[child].type);
+                    if (dapvar[child].type) {
+                        this.dapvar = dapvar[child];
+                        tmp = this.getValue();
+                        out.push(tmp);
+                    }
                 }
             }
             this.dapvar = dapvar;

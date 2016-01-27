@@ -13,7 +13,11 @@ var IE_HACK=false;
                 var url = document.getElementById('url').value;
                 var ta = document.getElementById('textarea');
                 loadData(url, function(data) {
-                    ta.value = JSON.stringify(data);
+//                    ta.value = JSON.stringify(data);
+                    console.log(data);
+//                    var x = JSON.stringify(data);
+
+
                 });
                 return false;
             }
